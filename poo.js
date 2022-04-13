@@ -14,6 +14,9 @@ class Book{
         }
 
         _private.set(this, {properties});
+
+        // Metodos de la clase principal libro
+        // para mostrar los datos o para ingresar un nuevo dato mediante set
     }
 
     get title(){
@@ -54,10 +57,13 @@ class Comic extends Book{
         this.ilustrators = ilustrators;
         
     }
+    // Metodo para agregar un nuevo ilustrador
 
     addIlustrator(newIlustrator = []){
         this.ilustrators.push(newIlustrator);
     }
+
+    // Metodo para encontrar toda la información de comic
 
     getAllData(){
         super.getAllData();
@@ -91,14 +97,19 @@ class ShoppingCart {
     }
 }
 
+// Agregamos los valores de los atributos a los libros y comics
+
 const book1 = new Book('1984', 'George Orwell', 52.000 );
 const comic1 = new Comic ('The killing Joke', 'Alan Moore', 132.000, ['Brian Bolland, John Higgins']);
 
-
+// Utilizamos el metodo para añadir un ilustrador
 comic1.addIlustrator('J.H');
+
 console.log(comic1.ilustrators);
 
 
+// Instanciamos el objeto del carrito de compras para mostrar los atributos y valor total a pagar 
+// de los libros y comics que vamos a comprar
 const cart =  new ShoppingCart();
 
 cart.addProduct(2, comic1.price);
